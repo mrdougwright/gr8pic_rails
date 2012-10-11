@@ -1,4 +1,10 @@
 Gr8picRails::Application.routes.draw do
+  get "ratings/index"
+
+  get "ratings/new"
+
+  get "ratings/show"
+
   resources :users
   resources :ratings
 
