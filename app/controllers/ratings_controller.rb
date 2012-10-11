@@ -1,5 +1,6 @@
 class RatingsController < ApplicationController
   def index
+  	@photos = Photo.all
   end
 
   def new
