@@ -1,4 +1,12 @@
 Gr8picRails::Application.routes.draw do
+  get "photos/index"
+
+  get "photos/new"
+
+  get "photos/destroy"
+
+  get "photos/show"
+
   get "ratings/index"
 
   get "ratings/new"

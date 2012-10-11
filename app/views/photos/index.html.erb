@@ -1,0 +1,12 @@
+<h1>Photos (to browse and rate)</h1>
+<p>Find me in app/views/photos/index.html.erb</p>
+
+<div class="photos">
+	<%= @photos.each do |photo| %>
+		<div class="random_photos">
+			<span class="photo_name">
+				<% photo %>
+			</span>
+		</div>
+	<% end %>
+</div>
