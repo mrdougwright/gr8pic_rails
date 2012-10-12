@@ -1,6 +1,8 @@
 class RatingsController < ApplicationController
   def index
-  
+    @ratingsAverage = Rating.average(2)
+    @winner = Rating.winner
+    @averages = Rating.averages
   end
 
   def new
@@ -16,4 +18,6 @@ class RatingsController < ApplicationController
   	 #creating a rating for a photo
 
   end
+
+
 end

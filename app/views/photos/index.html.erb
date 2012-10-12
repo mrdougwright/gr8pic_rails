@@ -1,6 +1,12 @@
 <h1>Photos (to browse and rate)</h1>
 
-<div class="photos">
+<div id="wrapper">
 	<p>Random photo generated below...now rate it</p>
 	<p><%= @photo %></p>
 </div>
+
+<ul>
+	<li><div class="button"> <%= link_to "HISTORY", ratings_path %> </div></li>
+</ul>
+
+
