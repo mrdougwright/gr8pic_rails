@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   def index
-  	@photo = Photo.random.id
+  	@photo = Photo.random
   end
 
   def new

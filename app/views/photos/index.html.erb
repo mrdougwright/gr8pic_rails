@@ -2,11 +2,10 @@
 
 <div id="wrapper">
 	<p>Random photo generated below...now rate it</p>
-	<p><%= @photo %></p>
+	<p>Photo ID: <%= @photo.id %></p>
+
+<li><div class="button"> <%= link_to "HISTORY", ratings_path %> </div></li>
 </div>
 
-<ul>
-	<li><div class="button"> <%= link_to "HISTORY", ratings_path %> </div></li>
-</ul>
 
 

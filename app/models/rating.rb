@@ -5,25 +5,6 @@ class Rating < ActiveRecord::Base
   belongs_to :user
   # attr_accessible :title, :body
 
-  def self.average(photo_id)
-  	total = 0
-  	count = 0
-  		for x in Rating.all
-  			if x.photo_id == photo_id #placeholder, until login is specified. Then
-  												#the 'if' will check for login auth
-					total += x.value
-					count += 1
-				end
-			end
-		total / count
-  	# total = 0
-  	# total_ratings = 
-  	# for each_rating in total_ratings
-  	# 	total += each_rating
-  	# end
-  	# total / total_ratings.length
-  end
-
   def self.winner
   	ratingsArray = [[1,1]]
   	photoArray = []
@@ -42,11 +23,8 @@ class Rating < ActiveRecord::Base
 				#puts the average into photoArray (total / count) 
 				photoArray << photo[1] / photo[0].to_f
 		end
-		#ratingsArray
-		Photo.find(photoArray.index(photoArray.max)).user_id
+		Photo.find(photoArray.index(photoArray.max))
 	end
 
-	def self.averages
-		@ratingsArray
-	end
+	
 end

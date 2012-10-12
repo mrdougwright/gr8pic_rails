@@ -1,8 +1,7 @@
 class RatingsController < ApplicationController
   def index
-    @ratingsAverage = Rating.average(2)
-    @winner = Rating.winner
-    @averages = Rating.averages
+    @winningPhoto = Rating.winner
+    @winningUser = User.find(@winningPhoto.user_id).name
   end
 
   def new
