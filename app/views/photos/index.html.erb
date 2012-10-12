@@ -1,10 +1,27 @@
 <h1>Photos (to browse and rate)</h1>
 
 <div id="wrapper">
-	<p>Random photo generated below...now rate it</p>
+	<p>Random photo generated below. Rate it by number of stars...</p>
 	<p>Photo ID: <%= @photo.id %></p>
+	
+<div>
+	<%= radio_button_tag(:value, 1) %>
+	<%= label_tag(:value_photo, "1") %>
+	<%= radio_button_tag(:value, 2) %>
+	<%= label_tag(:value_photo, "2") %>
+	<%= radio_button_tag(:value, 3) %>
+	<%= label_tag(:value_photo, "3") %>
+	<%= radio_button_tag(:value, 4) %>
+	<%= label_tag(:value_photo, "4") %>
+	<%= radio_button_tag(:value, 5) %>
+	<%= label_tag(:value_photo, "5") %>
+</div>
 
-<li><div class="button"> <%= link_to "HISTORY", ratings_path %> </div></li>
+<li>
+	<div class="button">
+		<%= link_to "HISTORY", ratings_path %>
+	</div>
+</li>
 </div>
 
 
