@@ -1,29 +1,22 @@
 class Rating < ActiveRecord::Base
-  attr_accessible :value
+  attr_accessible :value, :photo_id, :user_id
 
   belongs_to :photo
   belongs_to :user
+
+  private
+  after_save :recalculate_photo_sum
   # attr_accessible :title, :body
 
+  def recalculate_photo_sum
+    photo.update_rating_total if photo
+  end
+  
   def self.winner
-  	ratingsArray = [[1,1]]
-  	photoArray = []
-
-  	#loop through every rating and put count of photo and sum ratings
-  	#in their own size 2 array, at the index value matching the photo_id
-  	for rate in Rating.all
-  		if ratingsArray[rate.photo_id].nil? 
-  			ratingsArray[rate.photo_id] = [0,0]
-  		end
-  		ratingsArray[rate.photo_id][1] += rate.value 	#total
-  		ratingsArray[rate.photo_id][0] += 1						#count
-		end
-
-		for photo in ratingsArray
-				#puts the average into photoArray (total / count) 
-				photoArray << photo[1] / photo[0].to_f
-		end
-		Photo.find(photoArray.index(photoArray.max))
+    #get the highest total
+    highestTotal = Photo.maximum("rating_total")
+    #find photo with highest total
+    Photo.where(:rating_total => highestTotal).first
 	end
 
 	

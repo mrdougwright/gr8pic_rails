@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121012003315) do
+ActiveRecord::Schema.define(:version => 20121012165711) do
 
   create_table "histories", :force => true do |t|
     t.string   "snapshot"
@@ -21,8 +21,9 @@ ActiveRecord::Schema.define(:version => 20121012003315) do
 
   create_table "photos", :force => true do |t|
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "rating_total"
   end
 
   add_index "photos", ["user_id"], :name => "index_photos_on_user_id"
