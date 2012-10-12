@@ -5,9 +5,8 @@ class Photo < ActiveRecord::Base
   has_many :ratings
 
 
-  def highest_rated
-  	#sum all ratings for each photo from rating model. 
-  	#highest rated photo is displayed for 24 hrs
+  def new
+  	@photo = Photo.new
   end	
 
   def self.random
