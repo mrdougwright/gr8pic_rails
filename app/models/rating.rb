@@ -8,6 +8,10 @@ class Rating < ActiveRecord::Base
   after_save :recalculate_photo_sum
   # attr_accessible :title, :body
 
+  def new
+    @rating = Rating.new
+  end
+
   def recalculate_photo_sum
     photo.update_rating_total if photo
   end

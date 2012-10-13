@@ -1,2 +1,11 @@
 <h1>Ratings#show</h1>
 <p>Find me in app/views/ratings/show.html.erb</p>
+
+<div id="wrapper">
+	<p>Yesterday's highest rated photo is:</p>
+	<ul>
+		<li>Photo ID: <%= @winningPhoto.id %></li>
+		<li>User ID: <%= @winningPhoto.user_id %></li>
+		<li>User Name: <%= @winningUser %></li>
+	</ul>
+</div>

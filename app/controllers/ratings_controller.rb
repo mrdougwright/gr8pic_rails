@@ -1,7 +1,6 @@
 class RatingsController < ApplicationController
   def index
-    @winningPhoto = Rating.winner
-    @winningUser = User.find(@winningPhoto.user_id).name
+    
   end
 
   def new
@@ -10,7 +9,8 @@ class RatingsController < ApplicationController
   end
 
   def show
-
+    @winningPhoto = Rating.winner
+    @winningUser = User.find(@winningPhoto.user_id).name
   end
 
   def create

@@ -4,7 +4,6 @@ class Photo < ActiveRecord::Base
 
   has_many :ratings
 
-
   def new
   	@photo = Photo.new
   end	
