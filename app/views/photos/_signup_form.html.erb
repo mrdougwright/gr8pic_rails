@@ -1,5 +1,9 @@
 <br>
-<span>this is a test partial</span><br>
-<span>I could have my signup form here</span><br>
+<span>You appear to be a new user. Please sign up below.</span><br>
 
-<%= email_field(:user, :email, :placeholder => "email address") %>
+<%= form_for @user do |x| %>
+<%= x.text_field(:name, :placeholder => "name") %>
+<%= x.email_field(:email, :placeholder => "email address") %>
+
+<%= x.submit "Create User" %>
+<% end %>
