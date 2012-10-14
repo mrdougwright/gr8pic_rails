@@ -1,4 +1,9 @@
 Gr8picRails::Application.routes.draw do
+  # get "users/index"
+  # get "users/new"
+  # get "users/show"
+  # get "users/destroy"
+
   resources :users
   resources :ratings
   resources :photos
