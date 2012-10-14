@@ -21,6 +21,6 @@ class Rating < ActiveRecord::Base
 
   def edit
     @rating = Rating.find(params[:id])
-  end
+  end #WHAT IS THIS DOING?
 	
 end

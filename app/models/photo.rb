@@ -6,7 +6,7 @@ class Photo < ActiveRecord::Base
 
   def new
   	@photo = Photo.new
-  end	
+  end	#WHAT IS THIS DOING?
 
   def self.random
   	Photo.order("RANDOM()").first
