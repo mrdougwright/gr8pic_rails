@@ -9,8 +9,18 @@
 <!-- need to pass in user id for the person who gave the rating=>>  -->
 
 	<%= form_for @rating do |f| %>
-		<%= f.label :value %>
-		<%= f.text_field :value %>
+		<div>
+		<%= f.radio_button :value, 1 %>
+		<%= f.label "1" %>
+		<%= f.radio_button :value, 2 %>
+		<%= f.label "2" %>
+		<%= f.radio_button :value, 3 %>
+		<%= f.label "3" %>
+		<%= f.radio_button :value, 4 %>
+		<%= f.label "4" %>
+		<%= f.radio_button :value, 5 %>
+		<%= f.label "5" %>
+	</div> 
 		<%= f.hidden_field :photo_id, :value => @photo.id %>
 
 		<%= f.submit "Rate!" %>
@@ -23,17 +33,3 @@
 </li>
 
 </div>
-
-<!-- 
-<div>
-	<%= radio_button_tag(:value, 1) %>
-	<%= label_tag(:value_photo, "1") %>
-	<%= radio_button_tag(:value, 2) %>
-	<%= label_tag(:value_photo, "2") %>
-	<%= radio_button_tag(:value, 3) %>
-	<%= label_tag(:value_photo, "3") %>
-	<%= radio_button_tag(:value, 4) %>
-	<%= label_tag(:value_photo, "4") %>
-	<%= radio_button_tag(:value, 5) %>
-	<%= label_tag(:value_photo, "5") %>
-</div> -->

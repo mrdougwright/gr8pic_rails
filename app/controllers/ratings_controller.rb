@@ -6,11 +6,11 @@ class RatingsController < ApplicationController
 
   def create
     @rating = Rating.new(params[:rating])
-    # if @rating.save
-    #   redirect_to @rating
-    # else
-    #   render :edit
-    # end
+    if @rating.save
+      redirect_to :back
+    else
+      render :edit
+    end
   end
 
   def show
