@@ -40,7 +40,7 @@ h1 {
   display: inline-block;
   padding: 4px 14px;
   margin-bottom: 0;
-  *margin-left: .3em;
+  /**margin-left: .3em;*/
   font-size: 18px;
   line-height: 30px;
   *line-height: 30px;
@@ -94,7 +94,7 @@ h1 {
 }
 
 .main_container {
-  width: 80%;
+  /*width: 80%;*/
   margin-left: auto;
   margin-right: auto;
 }
@@ -114,11 +114,11 @@ h1 {
    position: absolute;
 }
 
-#wrapper {
+/*#wrapper {
   margin-top: 2%;
-}
+}*/
 
-#wrapper li {
+li {
   display: inline-block;
   vertical-align: middle;
   position: relative;
@@ -140,19 +140,49 @@ a {
 /*-----------------------------------------------MEDIA SCREEN----------------------------------*/
 
 
+@media screen and (min-width: 801px) and (max-width: 1150px) {
+  .main_container img {
+    width: 500px;
+    height: auto;
+  }
 
+  #wrapper li {
+    display: inline;
+  }
+
+  .button {
+    margin: 1%;
+  }
+
+}
 @media screen and (min-width: 481px) and (max-width: 800px) {
 	.main_container img {
 		width: 400px;
     height: auto;
 	}
+  li {
+    display: inline;
+  }
+
+  .button {
+    margin: 1%;
+  }
 }
 @media screen and (max-width: 480px) {
 	.main_container img {
 		width: 240px;
     height: auto;
 	}
+  li {
+    display: inline;
+  }
+
+  .button {
+    margin: 1%;
+  }
+
 }
+
 
 
 
