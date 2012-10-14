@@ -4,6 +4,26 @@
 	<p>Random photo generated below. Rate it by number of stars...</p>
 	<p>Photo ID: <%= @photo.id %></p>
 
+	<p>Rate this photo!</p>
+
+<!-- need to pass in user id for the person who gave the rating=>>  -->
+
+	<%= form_for @rating do |f| %>
+		<%= f.label :value %>
+		<%= f.text_field :value %>
+		<%= f.hidden_field :photo_id, :value => @photo.id %>
+
+		<%= f.submit "Rate!" %>
+	<% end %>
+
+<li>
+	<div class="button">
+		<%= link_to "HISTORY", ratings_path %>
+	</div>
+</li>
+
+</div>
+
 <!-- 
 <div>
 	<%= radio_button_tag(:value, 1) %>
@@ -17,14 +37,3 @@
 	<%= radio_button_tag(:value, 5) %>
 	<%= label_tag(:value_photo, "5") %>
 </div> -->
-
-<li>
-	<div class="button">
-		<%= link_to "HISTORY", ratings_path %>
-	</div>
-</li>
-
-</div>
-
-
-

@@ -1,22 +1,22 @@
 class RatingsController < ApplicationController
   def index
-    
-  end
-
-  def new
-  	#use this
-  	#creating a rating for a photo
-  end
-
-  def show
     @winningPhoto = Rating.winner
     @winningUser = User.find(@winningPhoto.user_id).name
   end
 
   def create
-  	 #creating a rating for a photo
-
+    @rating = Rating.new(params[:rating])
+    # if @rating.save
+    #   redirect_to @rating
+    # else
+    #   render :edit
+    # end
   end
+
+  def show
+    
+  end
+
 
 
 end
