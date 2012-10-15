@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121015032447) do
+ActiveRecord::Schema.define(:version => 20121015041135) do
 
   create_table "histories", :force => true do |t|
     t.string   "snapshot"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20121015032447) do
 
   create_table "photos", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "rating_total"
+    t.integer  "ratings_total"
     t.integer  "ratings_count"
     t.integer  "ratings_ave"
     t.datetime "created_at",    :null => false

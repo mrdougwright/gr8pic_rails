@@ -15,7 +15,7 @@ class Rating < ActiveRecord::Base
   
   def self.winner #WINNER BY HIGHEST TOTAL
     #get the highest total
-    highestTotal = Photo.maximum("rating_total")
+    highestTotal = Photo.maximum("ratings_total")
     #find photo with highest total
     Photo.where(:ratings_total => highestTotal).first
 	end
