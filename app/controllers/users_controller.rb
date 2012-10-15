@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   	if @user.save
   		redirect_to :back #NEED TO FIX THIS AND CREATE EDIT METHODS
   	else
-  		render 'new'
+  		redirect_to new_user_path
   	end
   end
 

@@ -1,5 +1,5 @@
-class AddRatingTotalToPhoto < ActiveRecord::Migration
+class AddRatingsTotalToPhoto < ActiveRecord::Migration
   def change
-  	add_column :photos, :rating_total, :integer
+  	add_column :photos, :ratings_total, :integer
   end
 end
