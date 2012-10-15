@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   	@user = User.new(params[:user])
   	if @user.save
   		redirect_to :back #NEED TO FIX THIS AND CREATE EDIT METHODS
-  		
   	else
   		render :edit
   	end
