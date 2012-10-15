@@ -5,11 +5,12 @@ class Rating < ActiveRecord::Base
   belongs_to :user
 
   private
-  after_save :recalculate_photo_sum
+  after_save :recalculate_photo_sums
   # attr_accessible :title, :body
 
-  def recalculate_photo_sum
-    photo.update_rating_total if photo
+  def recalculate_photo_sums
+    # photo.update_rating_total if photo
+    photo.update_rating_total_and_count if photo
   end
   
   def self.winner

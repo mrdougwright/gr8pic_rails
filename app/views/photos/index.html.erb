@@ -22,6 +22,7 @@
 		<%= f.label "5" %>
 	</div> 
 		<%= f.hidden_field :photo_id, :value => @photo.id %>
+		<!-- hidden field with user_id of the rater goes here -->
 
 		<%= f.submit "Rate!", :class => "button" %>
 	<% end %>
