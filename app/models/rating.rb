@@ -6,7 +6,6 @@ class Rating < ActiveRecord::Base
 
   private
   after_save :recalculate_photo
-  # attr_accessible :title, :body
 
   def recalculate_photo
     # photo.update_rating_total if photo

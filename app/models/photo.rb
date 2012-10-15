@@ -10,7 +10,7 @@ class Photo < ActiveRecord::Base
       self.ratings_count = 0
     end
   end #should I use after_initialize instead. If so, how?
-  # AND THIS OVERWRITES MY UPDATERATINGTOTAL METHOD
+  # AND THIS OVERWRITES MY UPDATE_RATINGS_TOTAL METHOD (so added if statement)
 
   def new
   	@photo = Photo.new
@@ -30,8 +30,8 @@ class Photo < ActiveRecord::Base
     #not be the same one user rated. Change to find Rating.value based on user_id on rating.
     self.ratings_total += Rating.where(:photo_id => self).last.value
     self.ratings_count += 1
-    self.ratings_ave = self.ratings_total / self.ratings_count
+    self.ratings_ave = self.ratings_total / self.ratings_count.to_f
     self.save!
-  end  #updating total ratings and number of ratings
+  end  #updating total ratings and number of ratings HOW TO MAKE THIS DECIMALS?
 
 end
