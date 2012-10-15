@@ -1,3 +1,6 @@
+require 'bcrypt'
+
+
 class PhotosController < ApplicationController
   def index
   	@photo = Photo.random

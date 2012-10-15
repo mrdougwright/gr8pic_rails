@@ -3,7 +3,9 @@
 
 <%= form_for @user do |x| %>
 <%= x.text_field(:name, :placeholder => "name") %>
-<%= x.email_field(:email, :placeholder => "email address") %>
+<%= x.email_field(:email, :placeholder => "email address") %><br>
+<%= x.password_field :password, :placeholder => "password" %>
+<%= x.password_field :password_confirmation, :placeholder => "confirm password" %><br>
 
 <%= x.submit "Create User" %>
 <% end %>
