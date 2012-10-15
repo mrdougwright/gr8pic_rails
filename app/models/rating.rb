@@ -17,7 +17,7 @@ class Rating < ActiveRecord::Base
     #get the highest total
     highestTotal = Photo.maximum("rating_total")
     #find photo with highest total
-    Photo.where(:rating_total => highestTotal).first
+    Photo.where(:ratings_total => highestTotal).first
 	end
 
   def self.true_winner  #PROBLEM --> what about ties?
