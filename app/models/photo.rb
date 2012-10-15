@@ -5,9 +5,12 @@ class Photo < ActiveRecord::Base
   before_save :default_values
 
   def default_values
-    self.rating_total = 0
-    self.ratings_count = 0
+    if self.rating_total.nil? || self.ratings_count.nil?
+      self.rating_total = 0
+      self.ratings_count = 0
+    end
   end #should I use after_initialize instead. If so, how?
+  # AND THIS OVERWRITES MY UPDATERATINGTOTAL METHOD
 
   def new
   	@photo = Photo.new
@@ -22,13 +25,12 @@ class Photo < ActiveRecord::Base
   #   self.save!
   # end  --From session with Kurt
 
-  def update_rating_total_and_count
+  def update_photo_ratings
     #This query may need work later. At large scale, the last photo id may
     #not be the same one user rated. Change to find Rating.value based on user_id on rating.
-    
     self.rating_total += Rating.where(:photo_id => self).last.value
     self.ratings_count += 1
-  
+    self.ratings_ave = self.rating_total / self.ratings_count
     self.save!
   end  #updating total ratings and number of ratings
 

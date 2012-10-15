@@ -5,20 +5,25 @@ class Rating < ActiveRecord::Base
   belongs_to :user
 
   private
-  after_save :recalculate_photo_sums
+  after_save :recalculate_photo
   # attr_accessible :title, :body
 
-  def recalculate_photo_sums
+  def recalculate_photo
     # photo.update_rating_total if photo
-    photo.update_rating_total_and_count if photo
+    photo.update_photo_ratings if photo
   end
   
-  def self.winner
+  def self.winner #WINNER BY HIGHEST TOTAL
     #get the highest total
     highestTotal = Photo.maximum("rating_total")
     #find photo with highest total
     Photo.where(:rating_total => highestTotal).first
 	end
+
+  def self.true_winner  #PROBLEM --> what about ties?
+    highestTotal = Photo.maximum("ratings_ave")
+    Photo.where(:ratings_ave => highestTotal).first
+  end
 
   def edit
     @rating = Rating.find(params[:id])
