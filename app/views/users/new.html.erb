@@ -1,2 +1,14 @@
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
+
+<br>
+<span>You appear to be a new user. Please sign up below.</span><br>
+
+<%= form_for @user do |x| %>
+<%= x.text_field(:name, :placeholder => "name") %>
+<%= x.email_field(:email, :placeholder => "email address") %><br>
+<%= x.password_field :password, :placeholder => "password" %>
+<%= x.password_field :password_confirmation, :placeholder => "confirm password" %><br>
+
+<%= x.submit "Create User" %>
+<% end %>

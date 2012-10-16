@@ -1,2 +1,36 @@
 <h1>Ratings#new</h1>
 <p>Find me in app/views/ratings/new.html.erb</p>
+
+<p>Random photo generated below. Rate it by number of stars...</p>
+	<p>Photo ID: <%= @photo.id %></p>
+
+	<p>Rate this photo!</p>
+	<%= image_tag @photo.image.url %>
+<!-- need to pass in user id for the person who gave the rating=>>  -->
+
+	<%= form_for @rating do |f| %>
+		<div>
+		<%= f.radio_button :value, 1 %>
+		<%= f.label "1" %>
+		<%= f.radio_button :value, 2 %>
+		<%= f.label "2" %>
+		<%= f.radio_button :value, 3 %>
+		<%= f.label "3" %>
+		<%= f.radio_button :value, 4 %>
+		<%= f.label "4" %>
+		<%= f.radio_button :value, 5 %>
+		<%= f.label "5" %>
+	</div> 
+		<%= f.hidden_field :photo_id, :value => @photo.id %>
+		<%= f.hidden_field :user_id, :value => @user.id %>
+		<!-- hidden field with user_id of the rater goes here -->
+
+		<%= f.submit "Rate!", :class => "button" %>
+	<% end %>
+
+	<li>
+	<div class="button">
+		<%= link_to "HISTORY", ratings_path %>
+	</div>
+</li>
+

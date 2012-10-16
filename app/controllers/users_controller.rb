@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(params[:user])
   	if @user.save
-  		redirect_to :back #NEED TO FIX THIS AND CREATE EDIT METHODS
+  		redirect_to new_photo_path #NEED TO FIX THIS AND CREATE EDIT METHODS
   	else
   		redirect_to new_user_path
   	end

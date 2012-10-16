@@ -5,7 +5,8 @@
 	<ul>
 		<li>Photo ID: <%= @winningPhoto.id %></li>
 		<li>User ID: <%= @winningPhoto.user_id %></li>
-		<li>User Name: <%= @winningUser %></li>
+		<li>User Name: <%= @winningUser %></li><br>
+		<li><%= image_tag @winningPhoto.image.url %></li>
 	</ul>
 
 	<p>Yesterday's highest rated photo by ave star rating is:</p>
@@ -14,4 +15,5 @@
 		<li>User ID: <%= @true_winningPhoto.user_id %></li>
 		<li>User Name: <%= @true_winningUser %></li>
 	</ul>
+
 </div>

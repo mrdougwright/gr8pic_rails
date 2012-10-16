@@ -15,8 +15,10 @@ class RatingsController < ApplicationController
     end
   end
 
-  def show
-    
+  def new
+    @photo = Photo.random
+    @rating = Rating.new(params[:rating])
+    @user = User.last #NEED TO CHANGE TO CURRENT USER GIVING RATING!
   end
 
 

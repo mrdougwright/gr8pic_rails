@@ -1,11 +1,11 @@
-
-
 <h1>Upload a Photo</h1>
 <%= form_for(@photo, :html => { :multipart => true }) do |f| %>
 	<%= f.file_field :image %>
+	<%= f.hidden_field :user_id, :value => @user.id %>
+
 	<%= f.submit "Upload" %>
 <% end %>
-
+ 
 
 <% if false %> <!-- if user is new, display signup form -->
 	<%= render "signup_form" %>

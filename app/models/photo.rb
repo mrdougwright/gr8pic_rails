@@ -16,9 +16,9 @@ class Photo < ActiveRecord::Base
   end #should I use after_initialize instead. If so, how?
   # AND THIS OVERWRITES MY UPDATE_RATINGS_TOTAL METHOD (so added if statement)
 
-  def new
-  	@photo = Photo.new
-  end	#WHAT IS THIS DOING?
+  # def new
+  # 	@photo = Photo.new
+  # end	#WHAT IS THIS DOING?
 
   def self.random
   	Photo.order("RANDOM()").first
