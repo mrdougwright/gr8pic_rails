@@ -15,7 +15,7 @@ class PhotosController < ApplicationController
 
   def new
     #NEEDS TO BE CHANGED TO PHOTO BASED ON USER AUTH
-    @photo = Photo.new(params[:photo])
+    @photo = Photo.new
     @user = User.last #NEED TO CHANGE TO CURRENT USER WHO IS UPLOADING
   end
 

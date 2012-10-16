@@ -3,17 +3,17 @@
 <div id="wrapper">
 	<p>Yesterday's highest rated photo by total rating is:</p>
 	<ul>
-		<li>Photo ID: <%= @winningPhoto.id %></li>
-		<li>User ID: <%= @winningPhoto.user_id %></li>
-		<li>User Name: <%= @winningUser %></li><br>
-		<li><%= image_tag @winningPhoto.image.url %></li>
+		<li>Photo ID: <%= @winning_photo.id %></li>
+		<li>User ID: <%= @winning_photo.user_id %></li>
+		<li>User Name: <%= @winning_user %></li><br>
+		<li><%= image_tag @winning_photo.image.url %></li>
 	</ul>
 
 	<p>Yesterday's highest rated photo by ave star rating is:</p>
 	<ul>
-		<li>Photo ID: <%= @true_winningPhoto.id %></li>
-		<li>User ID: <%= @true_winningPhoto.user_id %></li>
-		<li>User Name: <%= @true_winningUser %></li>
+		<li>Photo ID: <%= @true_winning_photo.id %></li>
+		<li>User ID: <%= @true_winning_photo.user_id %></li>
+		<li>User Name: <%= @true_winning_user %></li>
 	</ul>
 
 </div>

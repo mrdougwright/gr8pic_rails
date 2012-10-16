@@ -6,7 +6,7 @@ class Photo < ActiveRecord::Base
     :small => "150x150>"
   }
 
-  before_save :default_values
+  before_create :default_values
 
   def default_values
     if self.ratings_total.nil? || self.ratings_count.nil?
