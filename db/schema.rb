@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121015041135) do
+ActiveRecord::Schema.define(:version => 20121016051517) do
 
   create_table "histories", :force => true do |t|
     t.string   "snapshot"
@@ -24,8 +24,11 @@ ActiveRecord::Schema.define(:version => 20121015041135) do
     t.integer  "ratings_total"
     t.integer  "ratings_count"
     t.integer  "ratings_ave"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
   end
 
   add_index "photos", ["user_id"], :name => "index_photos_on_user_id"

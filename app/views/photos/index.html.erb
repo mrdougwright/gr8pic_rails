@@ -1,3 +1,9 @@
+<h1>Upload a Photo</h1>
+<%= form_for :photo, :html => { :multipart => true } do |f| %>
+	<%= f.file_field :image %>
+	<%= f.submit "Upload" %>
+<% end %>
+
 <h1>Rate a random Photo</h1>
 
 <div id="wrapper">
