@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(:version => 20121016051517) do
 
   create_table "photos", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "ratings_total"
-    t.integer  "ratings_count"
+    t.integer  "ratings_total",      :default => 0
+    t.integer  "ratings_count",      :default => 0
     t.integer  "ratings_ave"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"

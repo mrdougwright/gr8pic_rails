@@ -6,20 +6,6 @@ class Photo < ActiveRecord::Base
     :small => "150x150>"
   }
 
-  before_create :default_values
-
-  def default_values
-    if self.ratings_total.nil? || self.ratings_count.nil?
-      self.ratings_total = 0
-      self.ratings_count = 0
-    end
-  end #should I use after_initialize instead. If so, how?
-  # AND THIS OVERWRITES MY UPDATE_RATINGS_TOTAL METHOD (so added if statement)
-
-  # def new
-  # 	@photo = Photo.new
-  # end	#WHAT IS THIS DOING?
-
   def self.random
   	Photo.order("RANDOM()").first
   end
