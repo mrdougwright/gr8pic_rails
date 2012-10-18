@@ -5,10 +5,12 @@
 <span>You appear to be a new user. Please sign up below.</span><br>
 
 <%= form_for @user do |x| %>
-<%= x.text_field(:name, :placeholder => "name") %>
-<%= x.email_field(:email, :placeholder => "email address") %><br>
-<%= x.password_field :password, :placeholder => "password" %>
-<%= x.password_field :password_confirmation, :placeholder => "confirm password" %><br>
+	<%= x.error_messages %>
 
-<%= x.submit "Create User" %>
+	<%= x.text_field(:name, :placeholder => "name") %>
+	<%= x.email_field(:email, :placeholder => "email address") %><br>
+	<%= x.password_field :password, :placeholder => "password" %>
+	<%= x.password_field :password_confirmation, :placeholder => "confirm password" %><br>
+
+	<%= x.submit "Create User" %>
 <% end %>
