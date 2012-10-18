@@ -4,6 +4,10 @@
 <br>
 <span>You appear to be a new user. Please sign up below.</span><br>
 
+<% flash.each do |key,value| %> <!-- NEED CSS FOR THIS -->
+	<div class="alert fadeout"><%= key %><%= value %></div>
+<% end %>
+
 <%= form_for @user do |x| %>
 	<%= x.error_messages %>
 

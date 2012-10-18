@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to new_photo_path #NEED TO FIX THIS AND CREATE EDIT METHODS
     else
+      flash[:error] = @user.errors.empty? ? "Error" : @user.errors.full_messages.to_sentence
       redirect_to new_user_path
     end
   end
