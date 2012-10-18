@@ -8,6 +8,7 @@ class RatingsController < ApplicationController
 
   def create
     @rating = Rating.new(params[:rating])
+    
     if @rating.save
       redirect_to :back
     else

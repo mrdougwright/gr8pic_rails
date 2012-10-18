@@ -1,11 +1,13 @@
 class PhotosController < ApplicationController
+
   def index
-  	@photo = Photo.random
+    @photo = Photo.random
     @rating = Rating.new 
   end
 
   def create
     @photo = Photo.create(params[:photo])
+
     if @photo.save
       redirect_to :back
     else
@@ -21,6 +23,7 @@ class PhotosController < ApplicationController
 
   def update
     @photo = Photo.create(params[:photo])
+
     if @photo.save
       redirect_to ratings_path
     else
@@ -31,7 +34,8 @@ class PhotosController < ApplicationController
   def destroy
   end
 
-   def show
-   	@photo = Photo.last
-   end
+  def show
+    @photo = Photo.last
+  end
+  
 end

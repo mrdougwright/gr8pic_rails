@@ -1,29 +1,24 @@
 <html>
-
 <body>
 
 	<header>Gr8pic</header><br />
+	
 	<h1>Upload your photo. Browse & rate the rest. See today's best one!</h1>
 
 	<div class="main_container"> <!--main container for rate button
 main picture, and upload button -->
-
-
 		<div>
 			<ul>
 				<li><div class="button"> <%= link_to "RATE", new_rating_path %> </div></li>
 				<li><div> <%= image_tag "/janeonroad.png", {:height => 500} %> </div></li>
-				<li><div class="button"> 
-					<!-- ADD LOGIC TO APPLICATION CONTROLLER FOR UPLOAD BUTTON? -->
-					<%= link_to "UPLOAD", new_photo_path %></div></li>
-	   	</ul>
+				<li><div class="button"><%= link_to "UPLOAD", new_photo_path %></div></li>
+			</ul>
 		</div>
 	</div>
 
 	<footer>
 		<div class="button"> <a href="welcome/about">ABOUT</a><div>
-	</footer>	
-
+	</footer>
 
 </body>
 </html>

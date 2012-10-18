@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def index
   end
 
@@ -7,12 +8,13 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.new(params[:user])
-  	if @user.save
-  		redirect_to new_photo_path #NEED TO FIX THIS AND CREATE EDIT METHODS
-  	else
-  		redirect_to new_user_path
-  	end
+    @user = User.new(params[:user])
+   
+    if @user.save
+      redirect_to new_photo_path #NEED TO FIX THIS AND CREATE EDIT METHODS
+    else
+      redirect_to new_user_path
+    end
   end
 
   def show
@@ -20,4 +22,5 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
 end
