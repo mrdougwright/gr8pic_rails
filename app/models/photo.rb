@@ -7,7 +7,7 @@ class Photo < ActiveRecord::Base
   }
 
   def self.random
-  	Photo.order("RANDOM()").first
+    Photo.order("RANDOM()").first
   end
 
   # def update_rating_total
