@@ -8,6 +8,11 @@
 </head>
 <body>
 
+<!-- BELOW FLASH IS FOR SESSIONS_CONTROLLER :NOTICE TO LOGGED OUT -->
+<% flash.each do |name, msg| %>
+		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% end %>
+
 <%= yield %>
 	
 </body>

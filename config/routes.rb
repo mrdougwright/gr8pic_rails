@@ -1,10 +1,10 @@
 Gr8picRails::Application.routes.draw do
-  # get "users/index"
-  # get "users/new"
-  # get "users/show"
-  # get "users/destroy"
+  get "log_in" => "sessions#new"
+  get "log_out" => "sessions#destroy"
+  get "sign_up" => "users#new"
 
   resources :users
+  resources :sessions
   resources :ratings
   resources :photos
 

@@ -23,11 +23,13 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+#gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 gem 'paperclip', "~> 3.0" #gem for file attachment for photos
 gem 'dynamic_form' #gem for Error Validations in view: http://tw.gs/17s4d
 gem 'thin'  #create thinner server messaging
+#gem 'letmein' #trying to get user sessions working
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
