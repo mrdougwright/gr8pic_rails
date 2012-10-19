@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.create(params[:photo])
+    @photo = Photo.create(params[:photo].merge({:user_id => current_user.id}))
 
     if @photo.save
       redirect_to :back
@@ -16,13 +16,11 @@ class PhotosController < ApplicationController
   end
 
   def new
-    #NEEDS TO BE CHANGED TO PHOTO BASED ON USER AUTH
     @photo = Photo.new
-    @user = User.last #NEED TO CHANGE TO CURRENT USER WHO IS UPLOADING
   end
 
   def update
-    @photo = Photo.create(params[:photo])
+    @photo = Photo.create(params[:photo].merge({:user_id => current_user.id}))
 
     if @photo.save
       redirect_to ratings_path

@@ -2,11 +2,8 @@
 
 <%= form_for(@photo, :html => { :multipart => true }) do |f| %>
 	<%= f.file_field :image %>
-	<%= f.hidden_field :user_id, :value => @user.id %>
 	
 	<%= f.submit "Upload" %>
 <% end %>
 
-<% if session[:user_id] != @user.id %> <!-- if user is new, display signup form: SESSIONS-->
-	<%= render "signup_form" %>
-<% end %>
+
