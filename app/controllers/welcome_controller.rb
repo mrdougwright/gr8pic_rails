@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   
   def index
-  	#render :layout => 'home'
+  	@winning_photo = Rating.winner
   end
 
   def about
