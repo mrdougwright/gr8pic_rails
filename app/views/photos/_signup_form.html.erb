@@ -2,10 +2,29 @@
 <span>You appear to be a new user. Please sign up below.</span><br>
 
 <%= form_for @user do |x| %>
-<%= x.text_field(:name, :placeholder => "name") %>
-<%= x.email_field(:email, :placeholder => "email address") %><br>
-<%= x.password_field :password, :placeholder => "password" %>
-<%= x.password_field :password_confirmation, :placeholder => "confirm password" %><br>
+	<% if @user.errors.any? %>
+		<div class="error_messages">
+			<h2>Form is invalid</h2>
+			<ul>
+				<% for message in @user.errors.full_messages %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
 
-<%= x.submit "Create User" %>
+	<p>
+		<%= x.label :email %><br />
+		<%= x.text_field(:email, :placeholder => "name") %>
+	</p>
+	<p>
+		<%= x.label :password %><br />
+		<%= x.password_field(:password, :placeholder => "password") %>
+	</p>
+	<p>
+		<%= x.label :password_confirmation %><br />
+		<%= x.password_field :password_confirmation %>
+	</p>
+
+	<%= x.submit "Create User" %>
 <% end %>

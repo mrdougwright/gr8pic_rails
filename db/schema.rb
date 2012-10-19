@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(:version => 20121019043402) do
 
   create_table "photos", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "ratings_total",      :default => 0
-    t.integer  "ratings_count",      :default => 0
-    t.integer  "ratings_ave"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.float    "ratings_total",      :default => 0.0
+    t.float    "ratings_count",      :default => 0.0
+    t.float    "ratings_ave"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20121019043402) do
 
   create_table "ratings", :force => true do |t|
     t.integer  "photo_id"
-    t.integer  "value"
+    t.float    "value"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(:version => 20121019043402) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "password_hash"
-    t.string   "password_salt"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "password_hash"
+    t.string   "password_salt"
   end
 
 end

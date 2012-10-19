@@ -20,7 +20,7 @@ class Photo < ActiveRecord::Base
     #not be the same one user rated. Change to find Rating.value based on user_id on rating.
     self.ratings_total += Rating.where(:photo_id => self).last.value
     self.ratings_count += 1
-    self.ratings_ave = self.ratings_total / self.ratings_count.to_f
+    self.ratings_ave = self.ratings_total / self.ratings_count
     self.save!
   end  #updating total ratings and number of ratings HOW TO MAKE THIS DECIMALS?
 

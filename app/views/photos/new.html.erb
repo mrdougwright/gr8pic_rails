@@ -7,6 +7,6 @@
 	<%= f.submit "Upload" %>
 <% end %>
 
-<% if false %> <!-- if user is new, display signup form: SESSIONS-->
+<% if session[:user_id] != @user.id %> <!-- if user is new, display signup form: SESSIONS-->
 	<%= render "signup_form" %>
 <% end %>
