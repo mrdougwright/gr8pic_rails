@@ -17,7 +17,6 @@ class RatingsController < ApplicationController
   def new
     @photo = Photo.random
     @rating = Rating.new
-    @user = User.last #NEED TO CHANGE TO CURRENT USER GIVING RATING!
   end
 
 end

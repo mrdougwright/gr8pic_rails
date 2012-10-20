@@ -114,6 +114,10 @@ h1 {
    position: absolute;
 }
 
+.small_font {
+  font-size: 0.75em;
+}
+
 /*#wrapper {
   margin-top: 2%;
 }*/

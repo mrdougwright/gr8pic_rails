@@ -10,11 +10,6 @@ class Photo < ActiveRecord::Base
     Photo.all.sample
   end
 
-  # def update_rating_total
-  #   self.rating_total = Rating.where(:photo_id => self).sum(:value)
-  #   self.save!
-  # end  --From session with Kurt
-
   def update_photo_ratings
     #This query may need work later. At large scale, the last photo id may
     #not be the same one user rated. Change to find Rating.value based on user_id on rating.
@@ -22,6 +17,6 @@ class Photo < ActiveRecord::Base
     self.ratings_count += 1
     self.ratings_ave = self.ratings_total / self.ratings_count
     self.save!
-  end  #updating total ratings and number of ratings HOW TO MAKE THIS DECIMALS?
-
+  end  
+  
 end

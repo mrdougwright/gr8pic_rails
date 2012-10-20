@@ -14,7 +14,8 @@
 ActiveRecord::Schema.define(:version => 20121019043402) do
 
   create_table "histories", :force => true do |t|
-    t.string   "snapshot"
+    t.datetime "date"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

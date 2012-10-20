@@ -1,7 +1,8 @@
 class CreateHistories < ActiveRecord::Migration
   def change
     create_table :histories do |t|
-      t.string :snapshot
+      t.datetime :date
+      t.integer  :user_id
 
       t.timestamps
     end

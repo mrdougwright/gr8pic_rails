@@ -5,7 +5,7 @@
 	<p>Photo ID: <%= @photo.id %></p>
 
 	<p>Rate this photo!</p>
-	<%= image_tag @photo.image.url %>
+	<%= image_tag @photo.image.url, {:height => 500} %>
 	<!-- need to pass in user id for the person who gave the rating=>>  -->
 
 	<%= form_for @rating do |f| %>

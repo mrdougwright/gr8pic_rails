@@ -1,6 +1,10 @@
-<br>
-<span>You appear to be a new user. Please sign up below.</span><br>
-
+<span class="small_font">so we know which photo is yours!</span>
+	<div>
+		<li><h1>Sign Up</h1></li>
+		<li><h1>Log In</h1></li>
+	</div>
+	
+<li>
 <%= form_for @user do |x| %>
 	<% if @user.errors.any? %>
 		<div class="error_messages">
@@ -26,5 +30,21 @@
 		<%= x.password_field :password_confirmation %>
 	</p>
 
-	<%= x.submit "Create User" %>
+	<%= x.submit "Create Account" %>
 <% end %>
+	</li>
+
+
+	<li>
+<%= form_tag sessions_path do %>
+	<p>
+		<%= label_tag :email %><br />
+		<%= text_field_tag :email, params[:email] %>
+	</p>
+	<p>
+		<%= label_tag :password %><br />
+		<%= password_field_tag :password %>
+	</p>
+	<p><%= submit_tag "Log in" %></p>
+<% end %>
+	</li>

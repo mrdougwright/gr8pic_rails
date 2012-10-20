@@ -8,11 +8,11 @@
 	<div class="main_container"> <!--main container for rate button
 main picture, and upload button -->
 		<div>
-			<ul>
+			
 				<li><div class="button"> <%= link_to "RATE", new_rating_path %> </div></li>
 				<li><div> <%= image_tag @winning_photo.image.url, {:height => 500} %> </div></li>
 				<li><div class="button"><%= link_to "UPLOAD", new_photo_path %></div></li>
-			</ul>
+		
 		</div>
 	</div>
 

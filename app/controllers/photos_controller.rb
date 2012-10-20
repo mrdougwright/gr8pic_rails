@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
     @photo = Photo.create(params[:photo].merge({:user_id => current_user.id}))
 
     if @photo.save
-      redirect_to :back
+      redirect_to new_rating_path
     else
       render :edit
     end
@@ -17,6 +17,7 @@ class PhotosController < ApplicationController
 
   def new
     @photo = Photo.new
+    @user = User.new
   end
 
   def update
