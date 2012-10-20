@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
    
     if @user.save
+      session[:user_id] = @user.id
       redirect_to new_photo_path #NEED TO FIX THIS AND CREATE EDIT METHODS
     else
       flash[:error] = @user.errors.empty? ? "Error" : @user.errors.full_messages.to_sentence

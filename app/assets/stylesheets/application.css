@@ -24,7 +24,7 @@ header {
 	color: #ED1111;
 	font-size: 40px;
 	font-weight: 800;
-	margin-top: 2%;
+	
 }
 
 h1 {
@@ -42,8 +42,8 @@ h1 {
   margin-bottom: 0;
   /**margin-left: .3em;*/
   font-size: 18px;
-  line-height: 30px;
-  *line-height: 30px;
+  line-height: 20px;
+  *line-height: 20px;
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   vertical-align: middle;
@@ -118,9 +118,23 @@ h1 {
   font-size: 0.75em;
 }
 
+#user_nav {
+  position: relative;
+  top: 0;
+  width: 200px;
+}
+
+#user_nav li {
+  font-size: 0.75em;
+}
+
 /*#wrapper {
   margin-top: 2%;
 }*/
+a {
+  text-decoration: none;
+  color: #5F7A65;
+}
 
 li {
   display: inline-block;
@@ -133,13 +147,10 @@ footer {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 2%;
+	margin-bottom: 2%;
 }
 
-a {
-	text-decoration: none;
-	color: #5F7A65;
-}
+
 
 /*-----------------------------------------------MEDIA SCREEN----------------------------------*/
 

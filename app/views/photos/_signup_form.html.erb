@@ -1,10 +1,7 @@
-<span class="small_font">so we know which photo is yours!</span>
-	<div>
-		<li><h1>Sign Up</h1></li>
-		<li><h1>Log In</h1></li>
-	</div>
-	
+<div class="main_container">
 <li>
+	<h1>Sign Up</h1>
+	<span class="small_font">so we know which photo is yours!</span>
 <%= form_for @user do |x| %>
 	<% if @user.errors.any? %>
 		<div class="error_messages">
@@ -18,8 +15,12 @@
 	<% end %>
 
 	<p>
+		<%= x.label :name %><br />
+		<%= x.text_field(:name, :placeholder => "name") %>
+	</p>
+	<p>
 		<%= x.label :email %><br />
-		<%= x.text_field(:email, :placeholder => "name") %>
+		<%= x.text_field(:email, :placeholder => "email") %>
 	</p>
 	<p>
 		<%= x.label :password %><br />
@@ -33,18 +34,4 @@
 	<%= x.submit "Create Account" %>
 <% end %>
 	</li>
-
-
-	<li>
-<%= form_tag sessions_path do %>
-	<p>
-		<%= label_tag :email %><br />
-		<%= text_field_tag :email, params[:email] %>
-	</p>
-	<p>
-		<%= label_tag :password %><br />
-		<%= password_field_tag :password %>
-	</p>
-	<p><%= submit_tag "Log in" %></p>
-<% end %>
-	</li>
+</div>
